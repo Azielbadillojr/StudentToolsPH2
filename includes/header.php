@@ -1,0 +1,4 @@
+<?php $pageTitle = $pageTitle ?? 'Student Tools PH'; $user = current_user(); ?>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101827"><title><?= e($pageTitle) ?> · Student Tools PH</title><link rel="stylesheet" href="assets/app.css"></head><body>
+<header class="topbar"><a class="brand" href="index.php"><span class="brand-mark">ST</span><span>Student Tools <b>PH</b></span></a><nav><a href="index.php#tools">Tools</a><?php if ($user): ?><a href="dashboard.php">My Dashboard</a><?php if ($user['role']==='admin'): ?><a href="admin/index.php">Admin</a><?php endif; ?><a class="nav-pill" href="logout.php">Log out</a><?php else: ?><a href="login.php">Log in</a><a class="nav-pill" href="register.php">Get started</a><?php endif; ?></nav></header>
+<main class="container">

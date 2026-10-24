@@ -1,0 +1,2 @@
+// Keep the signed-in user's online status fresh. Admin considers a user online for 120 seconds after a heartbeat.
+(function(){if(!document.body)return;const userSignedIn=document.querySelector('a[href="logout.php"]');if(!userSignedIn)return;const ping=()=>fetch('api/heartbeat.php',{method:'POST',credentials:'same-origin',headers:{'X-Requested-With':'XMLHttpRequest'}}).catch(()=>{});ping();setInterval(ping,45000);})();
